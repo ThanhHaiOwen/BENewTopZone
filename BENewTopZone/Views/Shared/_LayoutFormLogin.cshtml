@@ -1,0 +1,32 @@
+﻿@model BENewTopZone.Models.ViewModels.ProHome
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="~/Content/LoginClient.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="customer-blocks">
+        <div class="new-wrapper register-block">
+            <div class="topic-block">
+                <div class="topic-block-body">
+                    <img src="https://shopdunk.com/images/uploaded/banner/TND_M402_010%201.jpeg" alt="" width="793" height="467">
+                </div>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <!-- </form> -->
+
+    </div>
+  
+</body>
+</html>

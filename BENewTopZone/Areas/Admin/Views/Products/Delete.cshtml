@@ -1,0 +1,26 @@
+﻿@model BENewTopZone.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DANH SÁCH SẢN PHẨM</h2>
+
+<h3>Bạn có thực sự muốn xóa?</h3>
+
+
+<hr />
+@Html.Partial("PrtailViewPro", Model)
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+
+        </div>
+    }
+</div>

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ViewLoi";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông báo lỗi đăng nhập</title>
+</head>
+<body>
+    <h2>Thông báo lỗi đăng nhập</h2>
+    <p>@ViewBag.ViewLoi</p>
+    <p><a href="@Url.Action("Index", "LoginClient")">Quay lại trang đăng nhập</a></p>
+</body>
+</html>

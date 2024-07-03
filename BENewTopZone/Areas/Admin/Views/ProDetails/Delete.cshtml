@@ -1,0 +1,89 @@
+﻿@model BENewTopZone.Models.ProDetail
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIẾT SẢN PHẨM</h2>
+<h2>Xóa sản phẩm</h2>
+<h3>Bạn có thực sự muốn xóa?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            GIÁ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            SẢN PHẨM CÒN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainQuantity)
+        </dd>
+
+        <dt>
+            SỐ LƯỢT BÁN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldQuantity)
+        </dd>
+
+        <dt>
+            SỐ LƯỢT XEM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewQuantity)
+        </dd>
+
+        <dt>
+            DUNG LUONG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity.CapacityName)
+        </dd>
+
+        <dt>
+            MÀU SẮC
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.ColorName)
+        </dd>
+
+        <dt>
+            MÃ GIẢM GIÁ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount.DiscountCode)
+        </dd>
+
+        <dt>
+            TÊN SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-primary" />
+            @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

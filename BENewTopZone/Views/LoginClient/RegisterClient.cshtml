@@ -1,0 +1,89 @@
+﻿@model BENewTopZone.Models.Customer
+
+@{
+    ViewBag.Title = "RegisterClient";
+    Layout = "~/Views/Shared/_LayoutFormLogin.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<h2>RegisterClient</h2>
+@using (Html.BeginForm("RegisterClient", "LoginClient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.CusFirstName)
+        @Html.TextBoxFor(m => m.CusFirstName)
+        @Html.ValidationMessageFor(m => m.CusFirstName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CusLastName)
+        @Html.TextBoxFor(m => m.CusLastName)
+        @Html.ValidationMessageFor(m => m.CusLastName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CusPhone)
+        @Html.TextBoxFor(m => m.CusPhone)
+        @Html.ValidationMessageFor(m => m.CusPhone)
+    </div>
+    if (ViewBag.Errorrs != null)
+                {
+<p>
+    @ViewBag.Errorrs
+</p>
+        
+                }
+    <div>
+        @Html.LabelFor(m => m.CusEmail)
+        @Html.TextBoxFor(m => m.CusEmail)
+        @Html.ValidationMessageFor(m => m.CusEmail)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CusSex)
+        @Html.DropDownListFor(m => m.CusSex, new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Nam", Value = "Nam" },
+            new SelectListItem { Text = "Nữ", Value = "Nữ" }
+        }, "Chọn giới tính", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CusSex)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.CusDate)
+        @Html.TextBoxFor(m => m.CusDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @readonly = "readonly" })
+        @Html.ValidationMessageFor(m => m.CusDate)
+    </div>
+
+    <script>
+        $(function () {
+            $("#CusDate").datepicker({
+                dateFormat: "yy-mm-dd", // Định dạng ngày tháng năm (năm-tháng-ngày)
+                changeYear: true, // Cho phép chọn năm
+                changeMonth: true // Cho phép chọn tháng
+            });
+        });
+    </script>
+
+
+    <div>
+        @Html.LabelFor(m => m.CusPassword)
+        @Html.PasswordFor(m => m.CusPassword)
+        @Html.ValidationMessageFor(m => m.CusPassword)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.ConfirmCusPassword)
+        @Html.PasswordFor(m => m.ConfirmCusPassword)
+        @Html.ValidationMessageFor(m => m.ConfirmCusPassword)
+    </div>
+    <div class="card-footer text-center py-3">
+        <div class="small">
+            <a style="color:blue" href="@Url.Action("Index", "LoginClient", new { area = "" })">Đã có tài khoản? Đăng nhập ngay!</a>
+        </div>
+    </div>
+    <input type="submit" value="Register" />
+}

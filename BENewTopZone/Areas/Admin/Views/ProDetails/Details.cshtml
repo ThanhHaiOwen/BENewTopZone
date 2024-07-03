@@ -1,0 +1,83 @@
+﻿@model BENewTopZone.Models.ProDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemainQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity.CapacityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity.CapacityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color.ColorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.ColorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount.DiscountCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount.DiscountCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProDeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

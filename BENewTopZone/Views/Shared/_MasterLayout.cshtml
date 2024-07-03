@@ -1,0 +1,153 @@
+﻿@*@model BENewTopZone.Models.ViewModels.ProDetailCT*@
+@model BENewTopZone.Models.ViewModels.ProHome
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/MasterLayout.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+</head>
+<body>
+    <header>
+        <div class="top-menu">
+            <div id="topzone-logo">
+                <a href="@Url.Action("Index", "Home")"><img src="https://media.loveitopcdn.com/3807/logo-topzone-1.png" /></a>
+                <a href=""><img src="https://cdn.tgdd.vn/mwgcart/topzone/images/APR_logo.webp" /></a>
+            </div>
+            <div id="Menu-container">
+                <ul class="Menu">
+
+                    @*@foreach (var item in Model.ListCategory)
+        {
+            <li><a href="Category_Mac.html" class="nav_link">@item.NameCate</a></li>
+        }*@
+                    @if (Model != null && Model.ListCategory != null)
+                    {
+                        foreach (var item in Model.ListCategory)
+                        {
+                            <li>
+                                @Html.ActionLink(item.NameCate, "CategoryProduct", "Category", new { @ID = item.CatID }, null)
+                            </li>
+                        }
+                    }
+
+
+
+
+
+                    
+                    @*<li><a href="" class="nav_link">iPhone</a></li>
+
+
+        <li><a href="Category_Mac.html" class="nav_link">Mac</a></li>
+        <li><a href="iPad.html" class="nav_link">iPad</a></li>*@
+                    @*<li><a href="Watch1.html" class="nav_link">Watch</a></li>
+        <li><a href="sound.html" class="nav_link">Âm thanh</a></li>
+        <li><a href="phukien.html" class="nav_link">Phụ kiện</a></li>
+        <li><a href="" class="nav_link">TekZone</a></li>
+        <li><a href="" class="nav_link">TopCare</a></li>*@
+                </ul>
+            </div>
+            <div id="topzone-logo2">
+                <div class="fas-search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="fas-shopping">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="fas-user">
+
+                    <a href="@Url.Action("Index","LoginClient")">
+
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="Main-content"> @RenderBody() </div>
+
+    <div style="overflow: auto;" class="div-footer">
+        <div class="footer1">
+            <div class="logo-foot">
+                <a style="background-size: 514px 226px;" href="https://www.topzone.vn/">
+                    <i class="topzone-logo"></i>
+                </a>
+                <a href="https://www.topzone.vn/"></a>
+                <i class="topzone-autho"></i>
+            </div>
+            <ul class="fist-foot">
+                <li class="list-footer">
+                    <span><b>Tổng đài</b></span><br>
+                    <a href="1900969642">
+                        <span>Mua hàng: </span>
+                        <b>1900.9696.42 (7:30 - 22.00)</b>
+                    </a>
+                    <a style="margin-top: -20px ;" href="1900986843">
+                        <br>
+                        <span>CSKH: </span>
+                        <b> 1900986843 (8:00 - 21:30)</b>
+                    </a>
+                    <div class="web-footer-social">
+                        <span style="color: #888;">Kết nối với chúng tôi</span> <br>
+                        <a href="https://www.facebook.com/topzone.vn" target="_blank" class="link-social"><i class="iconsocial-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCoWdPNr8jSr7JM0OFlKvQHw " class="link-social" target="_blank"><i class="iconsocial-youtobe"></i></a>
+                        <a href="https://zalo.me/2040551312124557463" class="link-social" target="_blank"><i class="iconsocial-zalo"></i></a>
+                    </div>
+                </li>
+                <li class="list-footer">
+                    <span><b>Hệ thống cửa hàng</b></span> <br>
+                    <a href="" target="_blank" rel="nofollow">Xem 99 cửa hàng</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Nội quy cửa hàng</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Chất lượng phục vụ</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Chính sách bảo hành và đổi trả</a> <br>
+                </li>
+                <li class="list-footer">
+                    <span><b>Hỗ trợ khách hàng</b></span> <br>
+                    <a href="" target="_blank" rel="nofollow">Điều kiện giao dịch chung</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Hướng dẫn mua hàng online</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Chính sách giao hàng</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Hướng dẫn thanh toán</a> <br>
+                </li>
+                <li class="list-footer">
+                    <span><b> thương hiệu TopZone</b></span> <br>
+                    <a style="color: blue   ;" href="" target="_blank" rel="nofollow">Tích điểm Quà tặng vip </a> <br>
+                    <a href="" target="_blank" rel="nofollow">Giới thiệu TopZone</a> <br>
+                    <a href="" target="_1blank" rel="nofollow">Bán hàng doanh nghiệp</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Chính sách xử lí dữ liệu cá nhân</a> <br>
+                    <a href="" target="_blank" rel="nofollow">Xem bản mobile</a> <br>
+                </li>
+                <li class="list-footer">
+                    <span><b>tâm bảo hành TopCare</b> </span> <br>
+                    <a href="">Giới thiệu TopCare</a> <br>
+                </li>
+            </ul>
+
+            <div class="text" style="display: inline-block;overflow: hidden;padding: 22px 0;max-width: 60%;">
+                <span>
+                    © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007.<br>
+                    Địa chỉ: 128 Trần Quang Khải, P.Tân Định, Q.1, TP. Hồ Chí Minh. Điện thoại: 028 38125960.<br> Địa chỉ liên hệ và gửi chứng từ:<br> Lô T2-1.2, Đường D1, Đ. D1, P.Tân Phú, TP.Thủ Đức, TP.Hồ Chí Minh. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Email: Tot.huynhvan@thegioididong.com.
+                </span>
+            </div>
+
+        </div>
+        <div style="background-color: rgb(34,34,34); padding: 15px 15px 5px; text-align: center;" class="second-foot">
+            <p class="footer__logo--hd">Ghé thăm các tập đoàn MWG</p>
+            <ul style="font-size: 0px; margin-top: 15px;" class="footer__logo-list">
+                <li><a rel="nofollow" href="https://www.thegioididong.com/" target="_blank"><i class="iconlogo-thegioididong"></i></a></li>
+                <li><a rel="nofollow" href="https://www.dienmayxanh.com/" target="_blank"><i class="iconlogo-dienmayxanh"></i></a></li>
+                <li><a rel="nofollow" href="https://www.bachhoaxanh.com/" target="_blank"><i class="iconlogo-bachhoaxanh"></i></a></li>
+                <li><a rel="nofollow" href="https://www.nhathuocankhang.com/" target="_blank"><i class="iconlogo-ankhang"></i></a></li>
+                <li><a rel="nofollow" href="https://www.avakids.com/" target="_blank"><i class="iconlogo-kids"></i></a></li>
+                <li><a rel="nofollow" href="https://www.dichvutantam.com/" target="_blank"><i class="iconlogo-tantam"></i></a></li>
+                <li><a rel="nofollow" href="https://www.4kfarm.com/" target="_blank"><i class="iconlogo-4kfarm"></i></a></li>
+                <li><a rel="nofollow" href="https://vieclam.thegioididong.com/" target="_blank"><i class="iconlogo-vieclam"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

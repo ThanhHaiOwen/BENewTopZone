@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Admin_TopZone", "Index", "HomeAdmin", new { area = "Admin" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Loại Hàng", "Index", "Categories", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Sản Phẩm", "Index", "Products", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Chi Tiết Sản phẩm", "Index", "ProDetails", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Màu Sắc", "Index", "Colors", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Dung Lượng", "Index", "Capacities", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Mã Giảm Giá", "Index", "Discounts", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("TK Admin", "Index", "AminUsers", new { area = "Admin" }, new { @class = "nav-link" })</li>
+                    <!-- Thêm phần đăng nhập và đăng ký -->
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        @if (Session["NameUser"] == null)
+                        {
+                            <span> Hello </span>
+                        }
+                        else
+                        {
+                            <span> <text>Hello</text> @Session["NameUser"]</span>
+                        }
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Index", "LoginUser", new { area = "Admin" })" class="nav-link">
+                            <span style="color:white; margin-right: 5px;" class="fa-solid fa-right-to-bracket"></span>
+                            Đăng nhập
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("RegisterUser", "LoginUser", new { area = "Admin" })" class="nav-link">
+                            <span style="color:white; margin-right: 5px;" class="fa-solid fa-pen"></span>
+                            Đăng Kí
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("LogOutUser", "LoginUser", new { area = "Admin" })" class="nav-link">
+                            <span style="color:white; margin-right: 5px;" class="fa-solid fa-right-to-bracket"></span>
+                            Đăng Xuất
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - TopZone: Cửa hàng bán điện thoại Apple phân phối ủy quyền chính hãng </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

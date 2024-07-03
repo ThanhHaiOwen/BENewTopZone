@@ -1,0 +1,538 @@
+﻿@model  BENewTopZone.Models.ViewModels.ProHome
+@*@model BENewTopZone.Models.ViewModels.ProDetailCT*@
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetailProduct</title>
+
+    <!-- Liên kết đến tệp CSS -->
+  
+    <link href="~/Content/prodetail.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="intro-detail">
+        <div class="center-page">
+            <aside id="slider-detail">
+                <div class="video-img">
+                    <div class="thubmail-slide full">
+                        <div class="owl-carousel slider-img owl-loaded owl-drag" id="slider-defaults">
+                            <section>
+                                <div class="container">
+                                    <div class="main">
+                                        @if (Model != null && Model.ProImage != null)
+                                        {
+                                            <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                        }
+                                        <div class="control prev" style="left: 10px;">
+                                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="control next " style="right: 10px;">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="list-image">
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                        <div>
+                                            @if (Model != null && Model.ProImage != null)
+                                            {
+                                                <img src="@Url.Content(Model.ProImage)" alt="" class="img-feature">
+
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside>
+                <h1>@Html.DisplayFor(model => model.ProName)</h1>
+
+                <div class="price-promo-local">
+                    <span>Giá và khuyến mãi: Hồ Chí Minh</span>
+                    <div class="store-province">
+                        <div class="SearchContainer">
+                            <input id="SearchProvince" placeholder="Tìm theo tỉnh thành">
+                            <i class="topzone-search"></i>
+                        </div>
+                        <ul class="Provinces">
+                            <li class="Item active">
+                                <a href="#"> Hồ Chí Minh</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <strong class="price">
+                @Html.DisplayFor(model=>model.Price)đ
+                </strong>
+                <div class="loyalty">
+                    <div class="loyalty__main">
+                        <img class="lazyloaded" style="width: 24px; height: 24px;" src="https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/logo.png">
+                        <p class="loyalty__main__point">
+                            <b>+33.690</b> điểm tích lũy Quà tặng VIP
+                        </p>
+                        <img class="loyalty__main__ic-tooltip" src="https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/question_mark.png" style="width: 20px; height: 20px;">
+                    </div>
+                    <ul class="loyalty__tooltip"></ul>
+                </div>
+                <div class="capacity">
+                    <span>Dung lượng</span>
+                    <ul>
+                        <li class="">
+                            @*<a href="">@Html.DisplayFor(model => model.CapacityID)</a>*@
+                          
+                            <a href="#">  @Html.DisplayFor(model => model.CapacityName)</a>
+
+                        </li>
+                        @*<li class="">
+                                <a href="">@Html.DisplayFor(model => model.CapacityID)</a>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    @Html.DisplayFor(model => model.CapacityID)
+                                </a>
+                            </li>*@
+                    </ul>
+                </div>
+                <div class="color-sp">
+                    <span>Màu:@Html.DisplayFor(model => model.ColorName) </span>
+                    <ul>
+                        <li class="active">
+                            <a href="" style="background-color:@Html.DisplayFor(model => model.RGB); "></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div id="promotion-detail" class="box-promo nomal">
+                    <span>Khuyến mãi</span>
+                    <small>Giá và khuyến mãi dự kiến áp dụng đến 23.00 | 30/11</small>
+                    <div class="content-promo">
+                        <p>
+                            <i></i>
+                            <b>
+                                Thu cũ Đổi mới: Giảm đến 2 triệu (Tuỳ model máy cũ, Không kèm thanh toán qua cổng online, mua kèm)
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                Hoàn tiền nếu ở đâu rẻ hơn (Trong vòng 7 ngày; chỉ áp dụng tại siêu thị)
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                Hoàn 200,000đ cho chủ thẻ tín dụng HOME CREDIT khi thanh toán đơn hàng từ 5,000,000đ
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                Nhập mã MMSALE100 giảm ngay 1% tối đa 100.000đ khi thanh toán qua MOMO
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                Nhập mã VNPAYTAO giảm ngay 200K cho đơn hàng từ 15 Triệu, chỉ áp dụng thanh toán VNPAY-QR tại cửa hàng
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                Nhập mã ZLPIP15 giảm ngay 300K cho đơn hàng từ 20 Triệu, chỉ áp dụng thanh toán qua Ví ZALOPAY tại cửa hàng
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                        <p>
+                            <i></i>
+                            <b>
+                                <a href="">Xem chi tiết</a>
+                            </b>
+                        </p>
+                    </div>
+                    <p class="text">
+                        <em class="note">(*)</em>
+                        Giá hoặc khuyến mãi không áp dụng trả góp lãi suất đặc biệt (0%, 0.5%, 1%)
+                    </p>
+                </div>
+                <span class="check-goods">
+                    <i class="topzone-box"></i>
+                    Xem TopZone có hàng
+                </span>
+                @* phần mua ngay *@
+            <div class="buy-sp normal has-threebtn">
+                @* <a href="" onclick="BuyNow($(this))" class="btn-buy full">Mua ngay</a>*@
+
+                @* <a href="/ShoppingCart/AddToCart?productId= @Html.DisplayFor(model => model.ProID)" class="btn-buy full">Mua ngay</a>*@
+                @*<a href="/ShoppingCart/AddToCart?productId= @Html.DisplayFor(model => model.ProID)" class="btn-buy full">Mua ngay</a>*@
+
+                <a href="/ShoppingCart/AddToCart/@Html.DisplayFor(model => model.ProID)" class="btn-buy full">Mua ngay</a>
+
+
+                <a href="https://www.topzone.vn/tra-gop/tai-chinh/iphone/iphone-15-pro-max?productCode=0131491003835" class="btn-ins pay-taichinh has-another-pay">
+                    Mua trả góp 0%
+                    <span>Qua công ty tài chính</span>
+                </a>
+                <a href="https://www.topzone.vn/tra-gop/the/iphone/iphone-15-pro-max?productCode=0131491003835" class="btn-ins pay-nganluong has-another-pay">
+                    Trả góp 0% qua thẻ
+                    <span>Visa, Mastercard, JCB, Amex</span>
+                </a>
+            </div>
+                <div class="btn-area clearfix"></div>
+                <div class="popup-error"></div>
+                <ul class="policy">
+                    <li>
+                        <span>
+                            <i class="topzone-boxtskt"></i>
+                            Bộ sản phẩm gồm: Hộp, Sách hướng dẫn, Cây lấy sim, Cáp Type C
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="topzone-doitra"></i>
+                            Hư gì đổi nấy
+                            <b>12 tháng</b>
+                            tại 3399 siêu thị trên toàn quốc
+                            <a href="https://www.topzone.vn/bao-hanh-doi-tra">Xem chi tiết chính sách bảo hành, đổi trả</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="topzone-baohanhpolicy"></i>
+                            Bảo hành chính hãng 1 năm
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="topzone-giaohang"></i>
+                            Giao hàng nhanh toàn quốc
+                            <a href="">Xem chi tiết</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="topzone-"></i>
+                            Tổng đài:
+                            <a href="tel:1900.9696.42">1900.9696.42</a>
+                            (9.00 - 21.00 mỗi ngày)
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="topzone-"></i>
+
+                        </span>
+                    </li>
+                </ul>
+                <div class="pr-loyalty">
+                    <div class="qr-download">
+                        <img src="https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/qr.png?v=1" alt="" style="width: 72px;height: 72px;" class="lazyloaded">
+                        <p>Quét để tải app</p>
+                    </div>
+                    <div class="text-area">
+                        <p class="text-area__title">
+                            <img style="width: 32px;height: 32px;" src="	https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/logo.png" class="lazyloaded">
+                            <span>Quà tặng VIP</span>
+                        </p>
+                        <p class="text-area__content">
+                            Tích & Sử dụng điểm
+                            <br>
+                            cho khách hàng thân thiết
+                        </p>
+                        <p class="text-area__note">Sản phẩm của tập đoàn MWG</p>
+                    </div>
+                    <div class="download-link">
+                        <a href="https://play.google.com/store/apps/details?id=mwg.tgdd.loyalty&pli=1">
+                            <img style="width: 136px;height: 40px;" class="lazyloaded" src="https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/ggplay.png">
+                        </a>
+                        <a href="https://apps.apple.com/vn/app/qu%C3%A0-t%E1%BA%B7ng-vip/id1589555369">
+                            <img class="lazyloaded" style="width: 136px;height: 40px;" src="	https://cdn.tgdd.vn/mwgcart/topzone/images/promote_loyalty/appstore.png">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+    <div class="descrip">
+        <div class="access-needbuy">
+            <div class="an-title">
+                <strong class="sg-access">Phụ kiện nên có cho iPhone 15 Pro Max</strong>
+                <div>
+
+                </div>
+            </div>
+            <div class="access-sg owl-carousel owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-state">
+                        <div class="owl-item slidenumber13 " style="width:265px">
+                            <div class="item">
+                                <a href="https://www.topzone.vn/adapter-sac/adapter-sac-type-c-20w-cho-iphone-ipad-apple-mhje3">
+                                    <div class="img-access-sg">
+                                        <img class="ls-is-cached lazyloaded" src="https://cdn.tgdd.vn/Products/Images/9499/230315/s16/TimerThumb/adapter-sac-type-c-20w-cho-iphone-ipad-apple-mhje3-(6).png">
+                                    </div>
+                                    <h3>Adapter sạc Apple USB-C 20W</h3>
+                                    <span>
+                                        <b>550.000₫</b>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="owl-item slidenumber14 " style="width:265px">
+                            <div class="item">
+                                <a href="https://www.topzone.vn/tai-nghe/tai-nghe-bluetooth-airpods-pro-gen-2-magsafe-charge-usb-c-apple-mtjv3">
+                                    <div class="img-access-sg">
+                                        <img class="ls-is-cached lazyloaded" src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/54/315014/s16/TimerThumb/315014.png">
+                                    </div>
+                                    <h3>AirPods Pro (2nd Gen) USB-C </h3>
+                                    <span>
+                                        <b>5.990.000₫</b>
+                                        <strike>6.200.000₫</strike>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="owl-item slidenumber15 " style="width:265px">
+                            <div class="item">
+                                <a href="https://www.topzone.vn/adapter-sac/adapter-sac-type-c-20w-cho-iphone-ipad-apple-mhje3">
+                                    <div class="img-access-sg">
+                                        <img class="ls-is-cached lazyloaded" src="https://cdn.tgdd.vn/Products/Images/60/315058/s16/op-lung-magsafe-iphone-15-pro-max-nhua-trong-apple-mt233-thumb-650x650.png">
+                                    </div>
+                                    <h3>Ốp lưng MagSafe cho iPhone 15 Pro Max Nhựa trong Apple MT233</h3>
+                                    <span>
+                                        <b>1.285.000₫</b>
+                                        <strike>1.430.000₫</strike>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="owl-item slidenumber16 " style="width:265px">
+                            <div class="item">
+                                <a href="https://www.topzone.vn/mieng-dan-man-hinh/mieng-dan-camera-iphone-15-pro-max-optix-aluminium-uniq-da-sac">
+                                    <div class="img-access-sg">
+                                        <img class="ls-is-cached lazyloaded" src="https://cdn.tgdd.vn/Products/Images/1363/315013/s16/mieng-dan-camera-iphone-15-pro-max-optix-aluminium-uniq-da-sac-thumb-650x650.png">
+                                    </div>
+                                    <h3>Miếng dán camera iPhone 15 Pro Max OPTIX ALUMINIUM UNIQ</h3>
+                                    <span>
+                                        <b>351.000₫</b>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <strong class="combo-title sg-access">Phụ kiện gợi ý cho iPhone</strong>
+        <div id="combo-detail" class="buy-access ba-col2">
+            <div class="bunbled">
+                <div class="img-sp">
+                    <img src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-thumbtz-650x650.png">
+                </div>
+                <h3>iPhone 15 Pro Max</h3>
+                <strong>33.690.000₫</strong>
+                <small><strike>34.690.000₫</strike></small>
+            </div>
+            <div class="plus">
+                <i class="topzone-plus"></i>
+            </div>
+            <ul class="list-access">
+                <li>
+                    <div class="img-access">
+                        <img src="https://cdn.tgdd.vn/Products/Images/60/290328/s16/op-lung-magsafe-iphone-14-pro-max-da-apple-mppq3-thumb-650x650.png">
+                    </div>
+                    <h3>Ốp lưng Magsfe cho iPhone 15 Pro Max Da Apple MPPQ3</h3>
+                    <strong>1.340.000₫</strong>
+                    <small><strike>1.790.000₫</strike>-25%</small>
+                    <i class="topzone-stickchoose"></i>
+                </li>
+                <li>
+                    <div class="img-access">
+                        <img src="https://cdn.tgdd.vn/Products/Images/54/236016/s16/tai-nghe-bluetooth-airpods-2-apple--thumb-650x650.png">
+                    </div>
+                    <h3>AirPods 2 Hộp sạc thường</h3>
+                    <strong>2.690.000₫</strong>
+                    <small>
+                        <strike>3.490.000₫</strike>
+                        -22%
+                    </small>
+                    <i class="topzone-stickchoose"></i>
+                </li>
+            </ul>
+            <div class="total-bill">
+                <strong>37.720.000 ₫</strong>
+                <span>
+                    <strike>39.970.000 ₫</strike>
+                    <em>-5% </em>
+                </span>
+                <a href="">
+                    Mua
+                    <b>3</b>
+                    sản phẩm
+                </a>
+            </div>
+        </div>
+        <div class="tabs">
+            <h2 class="tab-link current" data-tab="tab-1">Mô tả</h2>
+            <h2 class="tab-link" data-tab="tab-2">Thông số kĩ thuật</h2>
+            <h2 class="tab-link" data-tab="tab-3">Đánh giá sản phẩm</h2>
+        </div>
+        <!-- <div class="tab-content" id="tab-2"></div> này mốt làm bằng js -->
+        <div class="description tab-content current" id="tab-1">
+            <div class="text-detail expand">
+                <p>
+                    <img style="float:left;" class="lazyloaded" src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-210923-113413.jpg" alt="IP15">
+                    <img class="lazyloaded" src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-210923-113413-1.jpg" alt="IP15">
+                    <img class="lazyloaded" src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-051023-102933.jpg" alt="IP15">
+                    <img class="lazyloaded" src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-210923-113414-1.jpg" alt="IP15">
+                    <img class="lazyloaded" src="https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-210923-113414-2.jpg" alt="IP15">
+                </p>
+                <p></p>
+                <h3><strong>Nội dung tính năng</strong></h3>
+                <p>iPhone 15 Pro Max. Được đúc từ titan và trang bị chip A17 Pro đột phá, nút Tác Vụ có thể tùy chỉnh, và hệ thống camera iPhone mạnh mẽ nhất từ trước đến nay.</p>
+                <div class="survey-wrap"></div>
+            </div>
+        </div>
+        <div class="wrap_cmt wrap_boder ">
+            <div id="comment-list" class="box-comment">
+                <h3 class="comment-title">Hỏi đáp về iPhone 15 Pro Max 256GB</h3>
+                <form id="frmAddcmt" action class="form">
+                    <div class="group-cm">
+                        <textarea name="txtContent" rows="1" pattern="10" required="required" placeholder="Mời bạn bình luận hoặc đặt câu hỏi" class="intend"></textarea>
+                    </div>
+                    <div class="gendercomment">
+                        <label for="gender">Giới tính:</label>
+                        <select id="gender" name="gender">
+                            <option value="male">Anh</option>
+                            <option value="female">Chị</option>
+                        </select>
+                    </div>
+                    <div class="group-cm group-cm--col">
+                        <div class="box-cmt-item">
+                            <input name="txtFullName" type="text" minlength="50" required="required">
+                            <label class="material-cm">
+                                Họ và tên
+                                <span>*</span>
+                            </label>
+                        </div>
+                        <div class="box-cmt-item">
+                            <input type="text" name="txtPhone" maxlength="50">
+                            <label class="material-cm">Số điện thoại</label>
+                        </div>
+                        <div class="box-cmt-item">
+                            <input name="txtEmail" type="text" maxlength="50">
+                            <label class="material-cm">Email</label>
+                        </div>
+                        <!--mai cop tu đây-->
+                        <button type="submit" class="submit box-cmt-item btn-send" style="display: inline-block;   background-color: #222b45;border-color: #222b45;">Gửi</button>
+                    </div>
+                </form>
+                <ul class="comment-list">
+                    <li>
+                        <div class="cmt-top">
+                            <p class="cmt-top-name">Hoàng Anh</p>
+                        </div>
+                        <div class="cmt-content">
+                            <p class="cmt-txt">Mình muốn mua trả góp thì phải đăng kí thế nào ạ</p>
+                        </div>
+                        <div class="cmt-command">
+                            <span class="cmt-time">7 giờ trước</span>
+                        </div>
+                    </li>
+                    <li class="commentlist-sub">
+                        <div class="child item-sub">
+                            <div class="cmt-top">
+                                <i class="iconcmt-qtv-topzone"></i>
+                                <p class="cmt-top-name">Lê Nhật Hạ</p>
+                                <span class="txt-qtv">QTV</span>
+                            </div>
+                            <div class="cmt-content-qtv">
+                                <p class="cmt-txt">
+                                    Dạ em chào anh chị!<br>
+                                    Dạ sản phẩm iPhone 15 Pro Max  hiện bên em đã hết hàng, chưa có thông tin thời gian cụ thể về hàng, nhờ anh chị theo dõi thêm thông tin tại trang web này, khi hàng về bên em sẽ cập nhật thông tin sớm nhất ạ. <br>Xin gửi thông tin đến anh chị.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="pgrc">
+                        <div class="pagcomment">
+                            <span></span>
+                            <a href="">1</a>
+                            <a href="">2</a>
+                            <a href="">3</a>
+                            <a href="">4</a>
+                            <span>...</span>
+                            <a href="">29</a>
+                            <a href="">>></a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/Content/Prodetailcustomer.js"></script>
+</html>

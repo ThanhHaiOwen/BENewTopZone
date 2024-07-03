@@ -1,0 +1,315 @@
+﻿@model BENewTopZone.Models.ViewModels.ProHome
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <!--  link bên dưới để thêm ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+
+    <!-------------
+        SLIDER
+    ------------->
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <a href=""><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1920x533/https://cdn.tgdd.vn/2023/11/banner/IP15-2880-800-1920x533.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""> <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1920x533/https://cdn.tgdd.vn/2023/10/banner/AWCS-2880-800-1920x548-1.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1920x533/https://cdn.tgdd.vn/2023/10/banner/MacBook-Air-2880-800-1920x533.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1920x533/https://cdn.tgdd.vn/2023/11/banner/ipad10-2880-800-1920x533.png" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1920x533/https://cdn.tgdd.vn/2023/10/banner/AirPods2-2880-800-1920x533.png" alt=""></a>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev">&lt</button>
+            <button id="next">&gt</button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        /**********************************
+     REPONSIVE SLIDER
+* *****************/
+        let slider = document.querySelector(".slider .list");
+        let items = document.querySelectorAll(".slider .list .item");
+        let next = document.getElementById("next");
+        let prev = document.getElementById("prev");
+        let dots = document.querySelectorAll(".slider .dots li");
+
+        let lengthItems = items.length - 1;
+        let active = 0;
+        next.onclick = function () {
+            active = active + 1 <= lengthItems ? active + 1 : 0;
+            reloadSlider();
+        };
+        prev.onclick = function () {
+            active = active - 1 >= 0 ? active - 1 : lengthItems;
+            reloadSlider();
+        };
+        let refreshInterval = setInterval(() => {
+            next.click();
+        }, 3000);
+        function reloadSlider() {
+            slider.style.left = -items[active].offsetLeft + "px";
+            //
+            let last_active_dot = document.querySelector(".slider .dots li.active");
+            last_active_dot.classList.remove("active");
+            dots[active].classList.add("active");
+
+            clearInterval(refreshInterval);
+            refreshInterval = setInterval(() => {
+                next.click();
+            }, 3000);
+        }
+        dots.forEach((li, key) => {
+            li.addEventListener("click", () => {
+                active = key;
+                reloadSlider();
+            });
+        });
+        window.onresize = function (event) {
+            reloadSlider();
+        };
+
+        /**********************************
+             REPONSIVE CỦA TỪNG DANH MỤC
+        * *****************/
+
+
+    </script>
+    <script src="~/Content/homejv.js"></script>
+
+    <!-----------------------------
+       CHOOSES-CATE
+     -------------------------------->
+    <div class="menu_phu">
+        <ul class="menu_2">
+            @*@if (Model != null && Model.ListCategory != null)
+        {
+            foreach (var item in Model.ListCategory)
+            {
+                <li>
+                    <a href="@Url.Action("CategoryProduct","Category", new { ID = item.CatID })">
+
+
+                        <div class="img-catesp cate@(item.NameCate.ToLower())">
+                            <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/IP_Desktop.png" alt="" width="102" height="112">
+                        </div>
+                        <span>@(item.NameCate.ToLower())</span>
+                    </a>
+                </li>
+            }
+        }*@
+
+            @if (Model != null && Model.ListCategory != null)
+            {
+                <!-- Hiển thị danh sách mục -->
+                foreach (var item in Model.ListCategory)
+                {
+                    <!-- Điều kiện kiểm tra danh mục sản phẩm là 'iphone' -->
+                    if (item.NameCate.ToLower() == "iphone")
+                    {
+                        <!-- Hiển thị ảnh tương ứng cho danh mục 'iphone' -->
+                        <li>
+                            <a href="@Url.Action("CategoryProduct", "Category", new { ID = item.CatID })">
+                                <div class="img-catesp cate@(item.NameCate.ToLower())">
+                                    <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/IP_Desktop.png" alt="" width="102" height="112">
+                                </div>
+                                <span>@item.NameCate</span>
+                            </a>
+                        </li>
+                    }
+
+                    else
+                    if (item.NameCate.ToLower() == "mac")
+                    {
+                        <!-- Hiển thị ảnh mặc định cho các danh mục khác -->
+                        <li>
+                            <a href="@Url.Action("CategoryProduct", "Category", new { ID = item.CatID })">
+                                <div class="img-catesp cate@(item.NameCate.ToLower())">
+                                    <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/Mac_Desktop.png" alt="" width="102" height="112">
+                                </div>
+                                <span>@item.NameCate</span>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <!-- Hiển thị ảnh mặc định cho các danh mục khác -->
+                        <li>
+                            <a href="@Url.Action("CategoryProduct", "Category", new { ID = item.CatID })">
+                                <div class="img-catesp cate@(item.NameCate.ToLower())">
+                                    <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/IPad_Desktop.png" alt="" width="102" height="112">
+                                </div>
+                                <span>@item.NameCate</span>
+                            </a>
+                        </li>
+                    }
+
+                }
+            }
+
+            
+        </ul>
+    </div>
+
+    <!--   ***************************
+     PHẦN DANH MỤC SẢN PHẨM
+    *********************-->
+
+    <div class="product_category">
+        <!-- *******************
+        IPHONE
+    ****************-->
+        <div class="PC_iphone">
+            @foreach (var ii in Model.ListProduct.Where(p => p.Category.NameCate == "iPhone").Take(1))
+            {
+                <div class="title_pd">
+                    <a href="@Url.Action("CategoryProduct","Category",new {ID=4})">
+                        <i class="fa-brands fa-apple"></i>
+                        <span><strong>@ii.Category.NameCate</strong></span>
+                    </a>
+                </div>
+            }
+
+            @* _____-----------------------
+            HIỂN THỊ SẢN PHẨM
+            __________________*@
+            <div class="list_pd2">
+                @foreach (var item in Model.ListProduct.Where(p => p.Category.NameCate == "iPhone").Take(4))
+                {
+                    <div class="itemp2">
+                        @foreach (var detail in item.ProDetails)
+                        {
+                            <a href="@Url.Action("Detail","Product",new { id = item.ProID })">
+                                <div class="img-slide"> <img src="@Url.Content(item.ProImage)" /> </div>
+                                <div>
+                                    <h3>@item.ProName</h3>
+                                    <span>
+                                        <strong>@detail.Price đ</strong>
+                                    </span>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+            <div>
+                <a class="see-more" href="@Url.Action("CategoryProduct","Category",new {ID=4})">Xem tất cả iPhone &gt</a>
+            </div>
+
+        </div>
+        <!-- *******************
+        IMAC
+    ****************-->
+        <div class="PC_iphone">
+            @foreach (var ii in Model.ListProduct.Where(p => p.Category.NameCate == "iPad").Take(1))
+            {
+                <div class="title_pd">
+                    <a href="@Url.Action("CategoryProduct","Category",new {ID=2})">
+                        <i class="fa-brands fa-apple"></i>
+                        <span><strong>@ii.Category.NameCate</strong></span>
+                    </a>
+                </div>
+            }
+
+            @* _____-----------------------
+            HIỂN THỊ SẢN PHẨM
+            __________________*@
+            <div class="list_pd2">
+                @foreach (var item in Model.ListProduct.Where(p => p.Category.NameCate == "iPad").Take(4))
+                {
+                    <div class="itemp2">
+                        @foreach (var detail in item.ProDetails)
+                        {
+                            <a href="@Url.Action("Detail", "Product", new { id = item.ProID })">
+                                <div class="img-slide"> <img src="@Url.Content(item.ProImage)" /> </div>
+                                <div>
+                                    <h3>@item.ProName</h3>
+                                    <span>
+                                        <strong>@detail.Price đ</strong>
+                                      
+                                    </span>
+                                </div>
+                            </a>
+                         }
+                        </div>
+                }
+            </div>
+            <div>
+                <a class="see-more" href="@Url.Action("CategoryProduct","Category",new {ID=2})">Xem tất cả ipad &gt</a>
+            </div>
+
+        </div>
+        <div class="PC_iphone">
+            @foreach (var ii in Model.ListProduct.Where(p => p.Category.NameCate == "Mac").Take(1))
+            {
+                <div class="title_pd">
+                    <a href="@Url.Action("CategoryProduct","Category",new {ID=6})">
+                        <i class="fa-brands fa-apple"></i>
+                        <span><strong>@ii.Category.NameCate</strong></span>
+                    </a>
+                </div>
+            }
+
+            @* _____-----------------------
+            HIỂN THỊ SẢN PHẨM
+            __________________*@
+        <div class="list_pd2">
+            @foreach (var item in Model.ListProduct.Where(p => p.Category.NameCate == "Mac").Take(4))
+            {
+                <div class="itemp2">
+                    @foreach (var detail in item.ProDetails)
+                    {
+                        <a href="@Url.Action("Detail", "Product", new { id = item.ProID })">
+                            <div class="img-slide"> <img src="@Url.Content(item.ProImage)" /> </div>
+                            <div>
+                                <h3>@item.ProName</h3>
+                                <span>
+                                    <strong>@detail.Price đ</strong>
+                                    
+                                </span>
+                            </div>
+                        </a>
+                    }
+                </div>
+            }
+        </div>
+            <div>
+                <a class="see-more" href="@Url.Action("CategoryProduct","Category",new {ID=6})">Xem tất cả Mac &gt</a>
+            </div>
+
+        </div>
+       
+
+    </div>
+    <script src="~/Content/Home.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,373 @@
+﻿header {
+    background: #101010;
+    height: 60px;
+}
+
+.Main-content {
+    width: auto;
+    height: 100%;
+}
+
+#topzone-logo img {
+    float: left;
+    max-width: auto;
+    max-height: 60px;
+}
+
+#topzone-logo {
+    width: 15%;
+    float: left;
+    display: flex;
+    height: 60px;
+}
+
+#topzone-logo2 {
+    height: 40px;
+    display: flex;
+}
+
+.fas-user {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #2f3033;
+    border-radius: 100%;
+}
+
+    .fas-user i {
+        width: 18px;
+        height: 18px;
+        color: white;
+        padding: 10px 10px 10px 13px;
+        display: inline-block;
+    }
+
+.fas-search {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #2f3033;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+}
+
+
+    .fas-search i {
+        width: 18px;
+        height: 18px;
+        color: white;
+        padding: 10px 10px 10px 13px;
+        display: inline-block;
+    }
+
+.fas-shopping {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #2f3033;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+}
+
+    .fas-shopping i {
+        width: 18px;
+        height: 18px;
+        color: white;
+        padding: 10px;
+        display: inline-block;
+    }
+
+.Menu {
+    float: left;
+    width: auto;
+    height: 60px;
+    padding-left: 20px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+#menu-container {
+    justify-content: center;
+    height: 60px;
+    margin: 0;
+    background-color: #3e3e3f;
+}
+
+.Menu li {
+    height: 40px;
+    padding: 20px 20px 0;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    transition: background-color 0.5s;
+}
+
+    .Menu li:hover {
+        background-color: gray;
+    }
+
+    .Menu li a {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.top-menu {
+    height: 60px;
+    background-color: #101010;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    min-width: 1024px;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+
+/*FOOTER*/
+.div-footer {
+    background-color: #101010;
+    width: 100%;
+    height: auto;
+}
+
+.footer1 {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 1024px;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.fist-foot li span {
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0 0 8px;
+    font-weight: 500;
+}
+
+.text span {
+    display: block;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 14px;
+    color: #666;
+}
+
+.fist-foot li {
+    float: left;
+    width: 23%;
+    display: list-item;
+}
+
+[class^="iconsocial-"], [class*="iconsocial-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/common/icon_socical.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 120px 90px;
+}
+
+.iconsocial-facebook {
+    background-position: -45px 0;
+    width: 33px;
+    height: 33px;
+}
+
+.iconsocial-youtube {
+    background-position: 0 0;
+    width: 33px;
+    height: 33px;
+}
+
+.iconsocial-zalo {
+    background-position: -85px 0;
+    width: 33px;
+    height: 33px;
+}
+
+.web-footer-social a {
+    display: inline-block;
+}
+
+.fist-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 1px solid #333;
+    padding: 0 0 30px;
+}
+
+.list-footer li:first-child {
+    width: 30%;
+}
+
+.fist-foot {
+    list-style: none;
+    justify-content: space-between;
+}
+
+    .fist-foot li a b {
+        font-weight: 400;
+        color: #2997ff;
+    }
+
+    .fist-foot li, a {
+        display: block;
+        overflow: hidden;
+        font-size: 13px;
+        line-height: 18px;
+        color: #e5e5e5;
+        font: Helvetica Neue,Helvetica,Arial,SF Pro Display,sans-serif;
+    }
+
+.footer__logo-list li {
+    display: inline-block;
+    margin: 0 5px 10px;
+}
+
+.list-footer a {
+    text-decoration: none;
+}
+
+.second-foot {
+    padding: 15px 15px 5px;
+    text-align: center;
+}
+
+.footer__logo--hd {
+    color: #757575;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.second-foot a {
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 133px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 300px 425px;
+}
+
+[class^="iconlogo-"], [class*="iconlogo-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/desktop/icon_logo@2x.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 133px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 300px 425px;
+}
+
+.iconlogo-thegioididong {
+    background-position: -145px -100px;
+}
+
+.iconlogo-dienmayxanh {
+    background-position: 0 -150px;
+}
+
+.iconlogo-bachhoaxanh {
+    background-position: 0 -100px;
+}
+
+.iconlogo-ankhang {
+    background-position: -145px -284px;
+}
+
+.iconlogo-kids {
+    background-position: -145px -380px;
+}
+
+.iconlogo-4kfarm {
+    background-position: -145px -330px;
+}
+
+.iconlogo-vieclam {
+    background-position: 0 -378px;
+}
+
+.footer__logo-list ul, li {
+    list-style: none;
+}
+
+.footer__logo-list {
+    font-size: 0;
+    margin-top: 15px;
+}
+
+[class^="topzone-"], [class*="topzone-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/icon-topzone.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 514px 226px;
+}
+
+.logo-foot {
+    display: flex;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.topzone-logo {
+    background-position: 0 0;
+    width: 103px;
+    height: 35px;
+}
+
+.topzone-autho {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/APR_logo.webp);
+    width: 32px;
+    height: 40px;
+    background-size: 100%;
+}
+
+.logo-foot a:first-child {
+    padding: 0 10px 0 0;
+    border-right: 1px solid #3b3b3b;
+    margin-right: 10px;
+}
+/*.container body-content {
+    height: auto;
+    width: 540px;
+    margin: auto;
+}*/
+
+.container body-content {
+}
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;*/
+

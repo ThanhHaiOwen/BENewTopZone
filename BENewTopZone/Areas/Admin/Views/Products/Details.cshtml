@@ -1,0 +1,18 @@
+﻿@model BENewTopZone.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DANH SÁCH SẢN PHẨM</h2>
+
+<h3>Chi tiết sản phẩm</h3>
+
+@Html.Partial("PrtailViewPro", Model)
+<br />
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.ProID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+
+</p>

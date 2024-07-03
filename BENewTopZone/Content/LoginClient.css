@@ -1,0 +1,87 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.customer-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 167px;
+    padding-right: 167px;
+    margin-top: 48px;
+    height: auto;
+    width: 1200px;
+}
+
+.new-wrapper {
+    max-width: 100%;
+}
+
+.topic-block-body img {
+    height: auto;
+}
+
+.page-title {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.form-fields {
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.inputs {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button.register-next-step-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+    button.register-next-step-button:hover {
+        background-color: #0056b3;
+    }
+
+.buttons-forgot a {
+    text-decoration: none;
+}
+
+.buttons-forgot {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .buttons-forgot label,
+    .buttons-forgot .link_access {
+        flex: 1;
+        text-align: center;
+    }
+
+    .buttons-forgot .link_access {
+        margin-left: 15px;
+    }

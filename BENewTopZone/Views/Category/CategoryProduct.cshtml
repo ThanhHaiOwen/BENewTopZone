@@ -1,0 +1,125 @@
+﻿@*@model List<BENewTopZone.Models.Product>*@
+    @model BENewTopZone.Models.ViewModels.ProHome
+@{
+    ViewBag.Title = "CategoryProduct";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <link href="~/Content/CategoryProduct.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div class="than">
+        <div class="icon">
+            <i style="color: white;" class="fa-brands fa-apple"></i>
+            <span style="color: white;"> <strong></strong> </span>
+        </div>
+        <div>
+            <div class="slider">
+                <div class="list">
+                    <div class="item">
+                        <a href=""><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1170x300/https://cdn.tgdd.vn/2023/11/banner/IP15-2400-600-1920x480.png" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href=""> <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_1170x300/https://cdn.tgdd.vn/2023/10/banner/MacBook-Air-2400-600-1920x480.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="prev">&lt</button>
+                    <button id="next">&gt</button>
+                </div>
+                <ul class="dots">
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script src="sapp.js"></script>
+        </div>
+        <!-- MENU CON -->
+        <!--<div class="mEnu-con">
+            <div class="fT-cate">
+                <a href="/iphone" data-id="0" class="active">
+                    Tất cả
+                </a>
+                <a href="/iphone-15" data-id="271594" class="">
+                    iPhone 15
+                </a>
+                <a href="/iphone-14" data-id="244884" class="">
+                    iPhone 14
+                </a>
+                <a href="/iphone-13" data-id="199759" class="">
+                    iPhone 13
+                </a>
+                <a href="/iphone-12" data-id="199758" class="">
+                    iPhone 12
+                </a>
+                <a href="/iphone-11" data-id="199757" class="">
+                    iPhone 11
+                </a>
+            </div>-->
+            <!-- lIST DANH SÁCH IPHONE -->
+        <!--</div-->>
+        <!-- <div class="iPhone-cate"> -->
+        <!-- Updated HTML structure for product display -->
+        <div class="list_pd2">
+            @foreach (var product in Model.ListProDetail)
+            {
+                <div class="itemp2">
+                    <!-- Product details -->
+
+                    <a href="@Url.Action("Detail", "Product", new { id = product.ProID })">
+                        <div class="img-slide">
+                            <img src="@Url.Content(product.Product.ProImage)" alt="">
+                        </div>
+                        <div class="GB">
+                            <ul>
+                                <li>@product.Capacity.CapacityName</li>
+                                @*<li>512GB</li>
+                                <li>1TB</li>*@
+                            </ul>
+                        </div>
+                        <div class="price-info">
+                            <h3>@product.Product.ProName</h3>
+                            <span>
+                                <strong>@product.Price đ</strong>
+                                @*<strike>34.990.000đ</strike>
+                                <small>-2%</small> <br>*@
+                            </span>
+                        </div>
+                    </a>
+                   
+                </div>
+            }
+            </div>
+
+
+        <!-- </div>          -->
+
+        <div class="coml">
+            <div class="evaluate">
+                <div class="main-form">
+                    <span class="question-name">
+                        Bạn có hài lòng với trải nghiệm tìm kiếm thông tin, sản phẩm trên wesite không?
+                    </span>
+                </div>
+                <div class="tra-loi">
+                    <button class="crmsurvey-btnanswer-icon">
+                        <img src="https://cdn.tgdd.vn/crmweb/survey/img/icon-happy.png" alt="radio_4997"> <br>
+                        <span class="surver-text-hasIcon">Hài lòng</span>
+                    </button>
+                    <button class="crmsurvey-btnanswer-icon">
+                        <img src="https://cdn.tgdd.vn/crmweb/survey/img/icon-bad.png" alt="radio_4998"> <br>
+                        <span class="surver-text-hasIcon">Không hài lòng</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

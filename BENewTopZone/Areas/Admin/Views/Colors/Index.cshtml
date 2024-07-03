@@ -1,0 +1,72 @@
+﻿@model IEnumerable<BENewTopZone.Models.Color>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .color-span {
+        display: inline-block;
+        width: 20px; /* Điều chỉnh chiều rộng theo ý muốn */
+        height: 20px; /* Điều chỉnh chiều cao theo ý muốn */
+        border-radius: 50%; /* Để bo tròn */
+        border: 1px solid black; /* Viền 1px và màu đen */
+        @*background-color: @Html.DisplayFor(modelItem => item.Color.RGB);*@ /* Màu nền từ RGB */
+    }
+    /*phần li*/
+    .custom-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+        .custom-list li {
+            margin-bottom: 10px; /* Có thể thêm margin giữa các mục nếu cần */
+        }
+        .custom-list li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+</style>
+<h2>MÀU SẢN PHẨM</h2>
+
+<table class="table table-striped">
+    <tr style="background-color: aqua">
+        <th>
+            TÊN MÀU
+        </th>
+        <th>
+            MÃ MÀU
+        </th>
+        <th>THAO TÁC</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColorName)
+            </td>
+            <td>
+
+                @*<span style="background-color:@Url.Content(item.RGB)">Màu</span>*@
+                <ul class="custom-list">
+                    <li>   @Html.DisplayFor(modelItem => item.RGB) </li>
+                    <li>
+                        <span class="color-span" style="background-color:@Html.DisplayFor(modelItem => item.RGB)"></span>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.ColorID }, new { @class = "btn btn-sm btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ColorID }, new { @class = "btn btn-sm btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<p>
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+</p>

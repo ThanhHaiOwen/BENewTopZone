@@ -1,0 +1,43 @@
+﻿@*@model BENewTopZone.Models.Customer*@
+@model BENewTopZone.Models.ViewModels.ProHome
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutFormLogin.cshtml";
+}
+
+<h2>Đăng Nhập</h2>
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+@using (Html.BeginForm("LoginAcount", "LoginClient"))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.CusEmail)
+        @Html.TextBoxFor(m => m.CusEmail)
+        @Html.ValidationMessageFor(m => m.CusEmail)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.CusPassword)
+        @Html.PasswordFor(m => m.CusPassword)
+        @Html.ValidationMessageFor(m => m.CusPassword)
+    </div>
+        if (ViewBag.ErrorTT != null)
+                {    
+        <p>
+            @ViewBag.ErrorTT
+        </p>
+                }
+    <div>
+        <div>
+            <div class="small">
+                <a style="color:blue" href="@Url.Action("RegisterClient", "LoginClient", new { area = "" })">Chưa có tài khoản, hãy đăng kí</a>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+}

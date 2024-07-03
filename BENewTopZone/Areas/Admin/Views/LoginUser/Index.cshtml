@@ -1,0 +1,53 @@
+﻿@model BENewTopZone.Models.AminUser
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+@*<h2>Đăng Nhập</h2>*@
+
+@using (Html.BeginForm("LoginAcount", "LoginUser"))
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Đăng Nhập</h3>
+                    </div>
+                    <div class="card-body">
+                        @Html.LabelFor(model => model.NameUser)
+                        @Html.TextBoxFor(model => model.NameUser, new { @class = "form-control mb-3" })
+                        @Html.ValidationMessageFor(model => model.NameUser, "", new { @class = "field-validation-error" })
+
+                        @Html.LabelFor(model => model.PasswordUser)
+                        @Html.PasswordFor(model => model.PasswordUser, new { @class = "form-control mb-3" })
+                        @Html.ValidationMessageFor(model => model.PasswordUser, "", new { @class = "field-validation-error" })
+
+                        @if (ViewBag.ErrorInfo != null)
+                        {
+
+                            <p>@ViewBag.ErrorInfo</p>
+                        }
+                        <div class="d-grid gap-2">
+                            <input type="submit" value="Đăng Nhập" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    <div class="card-footer text-center py-3">
+                      
+                        <a href="@Url.Action("RegisterUser", "LoginUser", new { area = "Admin" })">Chưa có tài khoản, hãy đăng kí </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

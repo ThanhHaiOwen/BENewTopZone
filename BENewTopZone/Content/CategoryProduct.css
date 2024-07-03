@@ -1,0 +1,617 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+/* THÂN */
+.than {
+    background-color: #3e3e3f;
+}
+/* *************
+MENU
+*********/
+header {
+    background: #101010;
+    height: 60px;
+}
+
+#topzone-logo img {
+    float: left;
+    max-width: auto;
+    max-height: 60px;
+    padding: 5px;
+}
+
+#topzone-logo {
+    width: 15%;
+    float: left;
+    display: flex;
+    height: 60px;
+}
+
+#topzone-logo2 {
+    height: 40px;
+}
+
+.ai-con {
+    float: right;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: #2f3033;
+    border-radius: 100%;
+}
+
+    .ai-con i {
+        width: 18px;
+        height: 18px;
+        color: white;
+        justify-content: center;
+        padding: 10px;
+        display: inline-block;
+    }
+
+nav {
+    float: left;
+    width: 70%;
+    height: 70px;
+}
+
+.Menu {
+    float: left;
+    width: auto;
+    height: 60px;
+    padding-left: 20px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+#menu-container {
+    justify-content: center;
+    height: 60px;
+}
+
+.Menu li {
+    height: 70px;
+    padding: 20px 20px;
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.5s;
+}
+
+    .Menu li:hover {
+        background-color: gray;
+    }
+
+    .Menu li a {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.top-menu {
+    height: 60px;
+    background-color: #101010;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    min-width: 1024px;
+    margin: auto;
+    width: 100%;
+}
+
+.main-content {
+    background-color: #333;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+/* HIỆU ỨNG CHUYỂN Động */
+.icon {
+    padding-top: 38px;
+    padding-bottom: 38px;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* **********************
+    SLIDER CON iphone
+    * sau này nếu dùng chung code với trang home thì phải
+    thay đổi lại tên các lớp 
+********************/
+.slider {
+    width: 1200px;
+    max-width: 100%;
+    height: 350px;
+    margin: auto;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+    .slider .list {
+        position: absolute;
+        width: max-content;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        transition: 1s;
+    }
+
+        .slider .list a img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            margin: auto;
+            box-sizing: border-box;
+            border: 0;
+            overflow: clip;
+        }
+
+    .slider .buttons {
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .slider .buttons button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: gray;
+            color: #fff;
+            border: none;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+    .slider .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: #fff;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .slider .dots li {
+            list-style: none;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border: solid rgb(70, 207, 234) 0.5px;
+            margin: 10px;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+            /* màu sau khi di chuot vao button và li */
+            .slider .buttons button:hover,
+            .slider .dots li:hover {
+                background-color: rgb(38, 32, 32);
+            }
+
+            .slider .dots li.active {
+                width: 30px;
+            }
+/* ******************
+ THẺ MENU CON 
+***************/
+.mEnu-con {
+    padding-left: 175px;
+    padding-right: 175px;
+    text-align: center;
+}
+
+    .mEnu-con a {
+        text-decoration: none;
+    }
+
+.fT-cate {
+    padding-top: 35px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 18px;
+    float: left;
+    display: flex;
+}
+
+    .fT-cate a {
+        color: #afb7bd;
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
+        font-family: 15px;
+        line-height: 22px;
+        margin: 0px 32px 4px 0px;
+    }
+
+        .fT-cate a:hover {
+            /* text-decoration: underline solid #afb7bd; */
+            border-bottom: 2px solid #afb7bd;
+        }
+
+/********************  
+phần liệt kê của iphone 
+*********************/
+/* Updated CSS for Product Display */
+.list_pd2 {
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itemp2 {
+    background-color: rgb(50 50 50);
+    width: 300px; /* Adjusted width */
+    height: auto; /* Allowing height to adjust */
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+    /* Rest of your existing CSS */
+
+
+    .itemp2 h3 {
+        font-weight: normal;
+    }
+
+    .itemp2 img {
+        height: 250px;
+    }
+
+.list_pd2 a {
+    text-decoration: none;
+    color: white;
+}
+
+.itemp2 .oragan {
+    color: rgb(255 159 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+/******************
+                HIỆU ỨNG KHI NHẤP VÀO THẺ
+                (ÁP DỤNG CHO CẢ LIST DANH SÁCH
+            ************************/
+.itemp2 {
+    transition: background-color 0.5s;
+}
+
+    .itemp2:hover {
+        background-color: gray;
+    }
+/* phần GB */
+.GB {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.itemp2 .GB ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.itemp2 .GB {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.itemp2 .price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.GB li {
+    margin-left: 10px;
+    background-color: rgb(28 28 29);
+    height: 39px;
+    width: 66px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.GBB {
+    background-color: rgb(34 35 36);
+    width: 250px;
+    height: 40px;
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-weight: none;
+}
+/***************
+    phần gần cuối footer
+**************** */
+
+.coml {
+    margin: 0 auto;
+    width: 500px;
+    height: 100px;
+    background-color: white;
+    border-radius: 14px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.evaluate {
+    display: flex;
+    align-items: center;
+}
+
+.tra-loi button {
+    border: 0;
+    border-radius: 14px;
+    margin-left: 5px;
+}
+
+.evaluate .tra-loi {
+    display: flex;
+}
+
+.tra-loi img {
+    width: 60px;
+    height: 50px;
+}
+
+.evaluate .tra-loi button {
+    display: inline-block;
+    background-color: white;
+    color: black; /* Màu chữ trắng */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s; /* Thêm hiệu ứng chuyển đổi màu nền */
+}
+
+    .evaluate .tra-loi button:hover {
+        background-color: #0056b3; /* Đặt màu nền khi di chuột vào nút */
+    }
+/* footer */
+.div-footer {
+    background-color: #101010;
+    width: 100%;
+    height: auto;
+}
+
+.footer1 {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 1024px;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.fist-foot li span {
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0 0 8px;
+    font-weight: 500;
+}
+
+.text span {
+    display: block;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 14px;
+    color: #666;
+}
+
+.fist-foot li {
+    float: left;
+    width: 23%;
+    display: list-item;
+}
+
+[class^="iconsocial-"], [class*="iconsocial-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/common/icon_socical.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 120px 90px;
+}
+
+.iconsocial-facebook {
+    background-position: -45px 0;
+    width: 33px;
+    height: 33px;
+}
+
+.iconsocial-youtube {
+    background-position: 0 0;
+    width: 33px;
+    height: 33px;
+}
+
+.iconsocial-zalo {
+    background-position: -85px 0;
+    width: 33px;
+    height: 33px;
+}
+
+.web-footer-social a {
+    display: inline-block;
+}
+
+.fist-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 1px solid #333;
+    padding: 0 0 30px;
+}
+
+.list-footer li:first-child {
+    width: 30%;
+}
+
+.fist-foot {
+    list-style: none;
+    justify-content: space-between;
+}
+
+    .fist-foot li a b {
+        font-weight: 400;
+        color: #2997ff;
+    }
+
+    .fist-foot li, a {
+        display: block;
+        overflow: hidden;
+        font-size: 13px;
+        line-height: 18px;
+        color: #e5e5e5;
+        font: Helvetica Neue,Helvetica,Arial,SF Pro Display,sans-serif;
+    }
+
+.footer__logo-list li {
+    display: inline-block;
+    margin: 0 5px 10px;
+}
+
+.list-footer a {
+    text-decoration: none;
+}
+
+.second-foot {
+    padding: 15px 15px 5px;
+    text-align: center;
+}
+
+.footer__logo--hd {
+    color: #757575;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.second-foot a {
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 133px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 300px 425px;
+}
+
+[class^="iconlogo-"], [class*="iconlogo-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/desktop/icon_logo@2x.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 133px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 300px 425px;
+}
+
+.iconlogo-thegioididong {
+    background-position: -145px -100px;
+}
+
+.iconlogo-dienmayxanh {
+    background-position: 0 -150px;
+}
+
+.iconlogo-bachhoaxanh {
+    background-position: 0 -100px;
+}
+
+.iconlogo-ankhang {
+    background-position: -145px -284px;
+}
+
+.iconlogo-kids {
+    background-position: -145px -380px;
+}
+
+.iconlogo-4kfarm {
+    background-position: -145px -330px;
+}
+
+.iconlogo-vieclam {
+    background-position: 0 -378px;
+}
+
+.footer__logo-list ul, li {
+    list-style: none;
+}
+
+.footer__logo-list {
+    font-size: 0;
+    margin-top: 15px;
+}
+
+[class^="topzone-"], [class*="topzone-"] {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/icon-topzone.webp);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-size: 514px 226px;
+}
+
+.logo-foot {
+    display: flex;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.topzone-logo {
+    background-position: 0 0;
+    width: 103px;
+    height: 35px;
+}
+
+.topzone-autho {
+    background-image: url(//cdn.tgdd.vn/mwgcart/topzone/images/APR_logo.webp);
+    width: 32px;
+    height: 40px;
+    background-size: 100%;
+}
+
+.logo-foot a:first-child {
+    padding: 0 10px 0 0;
+    border-right: 1px solid #3b3b3b;
+    margin-right: 10px;
+}

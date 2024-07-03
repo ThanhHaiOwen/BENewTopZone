@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BENewTopZone.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DANH SÁCH SẢN PHẨM</h2>
+
+
+<table class="table table-striped">
+    <tr style="background-color: aqua">
+        <th>
+            TÊN SẢN PHẨM
+        </th>
+        <th>
+            ẢNH
+        </th>
+        <th>
+            MÔ TẢ
+        </th>
+        <th>
+            NGÀY TẠO
+        </th>
+        <th>
+            LOẠI SẢN PHẨM
+        </th>
+        @*<th>mua</th>*@
+        <th>
+            THAO TÁC
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProName)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ProImage)" width="100" />
+            </td>
+            
+            <td>
+                @if (item.NameDecription.Length > 40)
+                {
+                    @item.NameDecription.Substring(0, 40) @* Hiển thị 50 ký tự đầu tiên *@
+                    <span>...</span> @* Thêm dấu "..." để chỉ ra phần còn lại *@
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.NameDecription) @* Hiển thị toàn bộ nếu độ dài không vượt quá 50 ký tự *@
+                }
+            </td>
+
+
+            @*<td>
+            @Html.DisplayFor(modelItem => item.NameDecription)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.NameCate)
+            </td>
+            @*@Html.DisplayFor(modelItem => item.Category.NameCate)*@
+
+            @*<td>
+        <a href="/ShoppingCart/AddToCart/@item.ProID" class="btn-buy full">Mua ngay</a>
+        </td>*@
+
+
+
+            @*   <a style="color:red" href="@Url.Action("AddToCart", "ShoppingCart", new { id = item.ProID })">Mua ngay</a>*@
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.ProID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Chi Tiết", "Details", new { id = item.ProID }, new
+                {
+                    @class = "btn btn-success"@*, style = "background-color: pink;"*@}) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ProID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,27 @@
+﻿@model BENewTopZone.Models.Capacity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Capacity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacityName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CapacityID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BENewTopZone.Models.ProDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .color-span {
+        display: inline-block;
+        width: 20px; /* Điều chỉnh chiều rộng theo ý muốn */
+        height: 20px; /* Điều chỉnh chiều cao theo ý muốn */
+        border-radius: 50%; /* Để bo tròn */
+        border: 1px solid black; /* Viền 1px và màu đen */
+        @*background-color: @Html.DisplayFor(modelItem => item.Color.RGB);*@ /* Màu nền từ RGB */
+    }
+    /*phần li*/
+    .custom-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+        .custom-list li {
+            margin-bottom: 10px; /* Có thể thêm margin giữa các mục nếu cần */
+        }
+        .custom-list li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+</style>
+
+<h2>CHI TIẾT SẢN PHẨM</h2>
+
+
+<table class="table table-striped">
+    <tr style="background-color: aqua">
+        <th>
+            TÊN SẢM PHẨM
+        </th>
+        <th>
+            DUNG LƯỢNG
+        </th>
+        <th>
+            MÀU SẮC
+        </th>
+        <th>
+            GIÁ
+        </th>
+        <th>
+            MÃ GIẢM GIÁ
+        </th>
+        <th>
+
+            SẢN PHẨM CÒN
+        </th>
+        <th>
+            SỐ LƯỢT BÁN
+        </th>
+        <th>
+            SỐ LƯỢT XEM
+        </th>
+        <th>
+            THAO TÁC
+        </th>
+        <th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity.CapacityName)
+            </td>
+            <td>
+                <ul class="custom-list">
+                    <li> @Html.DisplayFor(modelItem => item.Color.ColorName) </li>
+                    <li>
+                        <span class="color-span" style="background-color:@Html.DisplayFor(modelItem => item.Color.RGB)"></span>
+                    </li>
+                </ul>
+                @* @Html.DisplayFor(modelItem => item.Color.RGB)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount.DiscountCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemainQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewQuantity)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.ProDeID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Chi Tiết", "Details", new { id = item.ProDeID }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ProDeID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+</p>
